@@ -174,7 +174,7 @@ class ConvGLUDecoder(chainer.Chain):
 class Seq2seq(chainer.Chain):
 
     def __init__(self, n_layers, n_source_vocab, n_target_vocab, n_units,
-                 max_length=128, dropout=0.2, width=3):
+                 max_length=50, dropout=0.2, width=3):
         init_emb = chainer.initializers.Normal(0.1)
         init_out = VarInNormal(1.)
         super(Seq2seq, self).__init__(

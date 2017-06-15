@@ -181,7 +181,8 @@ def main():
 
     # Define Model
     model = net.Seq2seq(
-        args.layer, len(source_ids), len(target_ids), args.unit)
+        args.layer, len(source_ids), len(target_ids), args.unit,
+        max_length=45)
     if args.gpu >= 0:
         chainer.cuda.get_device(args.gpu).use()
         model.to_gpu(args.gpu)
